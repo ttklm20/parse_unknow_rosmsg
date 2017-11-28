@@ -58,7 +58,7 @@ int main(int argc, char** argv)
     Parser parser;
 
     if( argc == 1 ){
-        printf("Usage: rosbag_example list_of_topics_names\n");
+        printf("Usage: ./subscribe_example List_of_topics_names\n");
         return 1;
     }
 

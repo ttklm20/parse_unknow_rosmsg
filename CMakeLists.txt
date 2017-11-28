@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ros_type_introspection)
 
-find_package(Boost REQUIRED COMPONENTS regex)
+find_package(Boost REQUIRED COMPONENTS)
 
 
 find_package(catkin REQUIRED COMPONENTS 
@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 # Build flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 ###################################
 ## catkin specific configuration ##
@@ -87,6 +87,10 @@ endif(benchmark_FOUND)
 
 add_executable(rosbag_example          example/rosbag_example.cpp)
 target_link_libraries(rosbag_example   ${catkin_LIBRARIES} ros_type_introspection)
+
+add_executable(rosbag_parse          example/rosbag_parse.cpp)
+target_link_libraries(rosbag_parse   ${catkin_LIBRARIES} ros_type_introspection)
+
 
 add_executable(subscribe_example        example/subscribe_example.cpp)
 target_link_libraries(subscribe_example ${catkin_LIBRARIES} ros_type_introspection
